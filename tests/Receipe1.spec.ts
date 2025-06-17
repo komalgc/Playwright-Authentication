@@ -20,3 +20,4 @@ test ('Homepage test', async({page}) =>{
     await expect(page.getByText('komalgc')).toBeVisible();
 
 })
+
