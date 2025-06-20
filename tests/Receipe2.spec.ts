@@ -1,8 +1,25 @@
 import { test } from "../playwright/fixture";
+import { expect } from '@playwright/test'
 
-test("first test", async ({ page }) => {
+let bookscount;
+test('first test', async ({ page }) => {
+
+  await page.goto('https://bookcart.azurewebsites.net/');
+  await expect(page.getByText('komalgc')).toBeVisible();
+  await page.getByRole('button').filter({ hasText: 'favorite' }).click();
+  await expect(page).toHaveURL('https://bookcart.azurewebsites.net/wishlist');
+
+  bookscount = await page.locator('tr').count();
+  const actualcount = bookscount - 1;
+  console.log(actualcount);
+
+})
+test("second test", async ({ page }) => {
   await page.goto("https://bookcart.azurewebsites.net/");
   await page.waitForURL("https://bookcart.azurewebsites.net/");
-  //continue with any user journey like adding books to cart or wishlist and make assertions
-  //If the test runs under worker 1, it will be performed as 'swathika' as the auth0.json  will be saved with storage state for 'swathika'
-  });
+  await page.getByRole('button').filter({ hasText: 'favorite' }).click();
+  await expect(page).toHaveURL('https://bookcart.azurewebsites.net/wishlist');
+  await expect(page.getByText('Your wishlist is empty.')).toBeVisible();
+
+});
+

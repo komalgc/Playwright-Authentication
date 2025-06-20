@@ -5,9 +5,10 @@ import 'dotenv/config';
 
 
 let account: { username: any; password: any };
-// Define a function to return account credentials based on the ID
+  // Define a function to return account credentials based on the ID
 async function acquireAccount(id: number) {
- // Define two accounts for demonstration
+ 
+  // You can have a list of pre-created accounts for testing.
  if (id === 0) {
    account = {
      username: process.env.username0,
@@ -23,9 +24,10 @@ async function acquireAccount(id: number) {
 }
 
 export const test = baseTest.extend<{}, { workerStorageState: string }>({
- // Use the same storage state for all tests in this worker.
+
+  // Define a fixture to provide the page object with authentication state.
  storageState: ({ workerStorageState }, use) => use(workerStorageState),
- // Authenticate once per worker with a worker-scoped fixture.
+ // This fixture will be used to authenticate the user and store the state.
  workerStorageState: [
    async ({ browser }, use) => {
      // Use parallelIndex as a unique identifier for each worker.
@@ -33,16 +35,16 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
      const fileName = `playwright/.auth${id}.json`;
 
      if (fs.existsSync(fileName)) {
-       // Reuse existing authentication state if any.
+     
        await use(fileName);
        return;
      }
-// Important: make sure we authenticate in a clean environment by unsetting storage state.
+
      const page = await browser.newPage({ storageState: undefined });
     
-     //you can have a list of pre created accounts for testing.
+    
      account = await acquireAccount(id);
-     // Perform authentication steps. Replace these actions with your own.
+     
      await page.goto("https://bookcart.azurewebsites.net/");
      await page.getByRole("button", { name: " Login " }).click();
      await page.getByLabel("Username").fill(account.username);
@@ -51,9 +53,9 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
        .locator("mat-card-actions")
        .getByRole("button", { name: "Login" }).click();
 
-     // Wait for the final URL to ensure that the cookies are actually set.
+    
      await page.waitForURL("https://bookcart.azurewebsites.net/");
-     // End of authentication steps.
+   
      await page.context().storageState({ path: `playwright/.auth${id}.json` });
      await page.close();
      await use(fileName);},
