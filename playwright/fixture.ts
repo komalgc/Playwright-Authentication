@@ -1,6 +1,8 @@
 import { test as baseTest, expect } from "@playwright/test";
 export * from "@playwright/test";
 import fs from "fs";
+import 'dotenv/config';
+
 
 let account: { username: any; password: any };
 // Define a function to return account credentials based on the ID
@@ -19,7 +21,6 @@ async function acquireAccount(id: number) {
  }
  return account;
 }
-
 
 export const test = baseTest.extend<{}, { workerStorageState: string }>({
  // Use the same storage state for all tests in this worker.
@@ -49,9 +50,6 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
      await page
        .locator("mat-card-actions")
        .getByRole("button", { name: "Login" }).click();
-
-
-
 
      // Wait for the final URL to ensure that the cookies are actually set.
      await page.waitForURL("https://bookcart.azurewebsites.net/");
