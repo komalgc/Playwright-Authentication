@@ -13,7 +13,7 @@ test.beforeAll('apilogin', async () => {
     const loginResponse = await apicontext.post('https://bookcart.azurewebsites.net/api/login',
 
         {
-             data: loginpayload
+            data: loginpayload
         })
 
     expect(loginResponse.ok()).toBeTruthy();
@@ -25,22 +25,27 @@ test.beforeAll('apilogin', async () => {
     const orderresponse = await apicontext.get('https://bookcart.azurewebsites.net/api/Order/9961',
 
         {
-           
+
             headers: {
 
-                    'Authorization' :token,
-                    'Content-Type': 'application/json'
-                },
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
 
-            }
+        }
     )
 
-    expect(orderresponse.ok()).toBeTruthy
+    expect(orderresponse.ok()).toBeTruthy();
+    if (!orderresponse.ok()) {
+  const errorText = await orderresponse.text();
+  console.error("Failed to create order. Status:", orderresponse.status());
+  console.error("Response body:", errorText);
+}
     const orderresponsejson = await orderresponse.json();
     console.log(orderresponsejson)
 
-    orderid =  orderresponsejson.orders[0];
-   console.log(orderid)
+    orderid = orderresponsejson[0].orderId;
+    console.log(orderid)
 
 })
 test('api test', async ({ page }) => {
