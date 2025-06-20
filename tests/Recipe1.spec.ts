@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-
+//Authenticate once via the UI and reuse the login storage state
 test('logintest', async({page}) =>{
 
     await page.goto('https://bookcart.azurewebsites.net/login');

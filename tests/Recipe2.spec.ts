@@ -1,6 +1,9 @@
 import { test } from "../playwright/fixture";
 import { expect } from '@playwright/test'
 
+//👩‍💼👩‍💻 Authenticate via the UI using different accounts and 
+// use unique storage states across each parallel worker
+
 let bookscount;
 test('first test', async ({ page }) => {
 
