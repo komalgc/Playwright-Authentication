@@ -1,5 +1,5 @@
 import { test, expect, chromium } from '@playwright/test';
-import { loginAndSaveStorageState } from '../playwright/auth.setup'; // Adjust the import path as necessary
+import { loginAndSaveStorageState } from '../../playwright/auth.setup'; // Adjust the import path as necessary
 import fs from 'fs';
 
 test.beforeAll(async () => {

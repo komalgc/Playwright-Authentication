@@ -1,11 +1,11 @@
 import { test } from "../playwright/fixture";
 import { expect } from '@playwright/test'
 
-//👩‍💼👩‍💻 Authenticate via the UI using different accounts and 
-// use unique storage states across each parallel worker
+// 👩‍💼👩‍💻 💻🔐🔐 Authenticate for multiple accounts once via the UI and reuse the login storage state
+
 
 let bookscount;
-test('first test', async ({ page }) => {
+test('first test account 1', async ({ page }) => {
 
   await page.goto('https://bookcart.azurewebsites.net/');
   await expect(page.getByText('komalgc')).toBeVisible();
@@ -17,7 +17,7 @@ test('first test', async ({ page }) => {
   console.log(actualcount);
 
 })
-test("second test", async ({ page }) => {
+test("second test account 2", async ({ page }) => {
   await page.goto("https://bookcart.azurewebsites.net/");
   await page.waitForURL("https://bookcart.azurewebsites.net/");
   await page.getByRole('button').filter({ hasText: 'favorite' }).click();
