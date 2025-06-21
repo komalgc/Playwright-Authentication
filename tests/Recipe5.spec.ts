@@ -2,6 +2,9 @@
 import { test} from '../playwright/multAuthPage.fixture';
 import { expect} from '@playwright/test';
 
+// 👩‍💼👩‍💻 📟🔐🔐 Authenticate for multiple accounts once via the API and 
+// reuse the login storage state
+
 test('Admin user sees order page', async ({ getPageWithAuth }) => {
   const page = await getPageWithAuth('admin');
   await page.goto('https://bookcart.azurewebsites.net/myorders');
