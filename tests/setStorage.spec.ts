@@ -1,17 +1,18 @@
-import { test as setup, expect, request, chromium } from "@playwright/test";
+import { test as setstorage, expect, request, chromium } from "@playwright/test";
 import fs from "fs";
+import 'dotenv/config';
 
 const adminFile = "playwright/.auth/admin.json";
 const BASE_URL = "https://bookcart.azurewebsites.net";
 
-setup("Generate admin storage state", async () => {
+setstorage("Generate admin storage state", async () => {
   const apiContext = await request.newContext();
 
   // Step 1: Get token via API login
   const loginRes = await apiContext.post(`${BASE_URL}/api/login`, {
     data: {
-      username: "buyerdev",
-      password: "Treeboa@123",
+      username: process.env.ADMIN_USER,
+      password: process.env.ADMIN_PASS
     },
   });
 
@@ -36,10 +37,7 @@ setup("Generate admin storage state", async () => {
   // Step 5: Reload to simulate logged-in user flow
   await page.reload();
 
-  // Step 6: Wait for UI element that proves login worked
-
-
-  // Step 7: Save storage state
+  // Step 6: Save storage state
   await context.storageState({ path: adminFile });
   await browser.close();
 
