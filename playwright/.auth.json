@@ -31,7 +31,7 @@
         },
         {
           "name": "authToken",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29tYWxnYyIsInN1YiI6IlVzZXIiLCJqdGkiOiIwM2RjOGIxYS0wZjJlLTRjYTItODFlMS03Njc5YmUyNmNkZjAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwidXNlcklkIjoiOTg4OCIsImV4cCI6MTc1MDU3MjEzNywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIn0.9VQ5LP15_gW3upGfElsx08FyYhCLfle6KZjdIfxCL18"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29tYWxnYyIsInN1YiI6IlVzZXIiLCJqdGkiOiJmZjc0MGNiNi04ODBkLTQxMDctOTU5My1mN2UyN2E3YjdhZDUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwidXNlcklkIjoiOTg4OCIsImV4cCI6MTc1MDYzNDU2MSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIn0.L7shcjj7VoXBS2mgiS_C9n8QqUAgUjnRgwdd-5khDZs"
         }
       ]
     }

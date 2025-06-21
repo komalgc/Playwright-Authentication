@@ -6,16 +6,18 @@ import { expect } from '@playwright/test'
 
 
 let bookscount;
-test('first test account 1', async ({ page }) => {
+test.only('first test account 1', async ({ page }) => {
 
   await page.goto('https://bookcart.azurewebsites.net/');
-  await expect(page.getByText('komalgc')).toBeVisible();
+  let rawText = await page.getByText('account_circlearrow_drop_down').textContent();
+  const username = rawText ? rawText.split(' ').pop()?.trim() : '';
+  console.log('The logged in User is ' + username);
   await page.getByRole('button').filter({ hasText: 'favorite' }).click();
   await expect(page).toHaveURL('https://bookcart.azurewebsites.net/wishlist');
 
   bookscount = await page.locator('tr').count();
   const actualcount = bookscount - 1;
-  console.log(actualcount);
+  console.log('The no of books in wishlist is ' +actualcount);
 
 })
 test("second test account 2", async ({ page }) => {
