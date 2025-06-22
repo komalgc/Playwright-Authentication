@@ -2,7 +2,7 @@ import { test as setstorage, expect, request, chromium } from "@playwright/test"
 import fs from "fs";
 import 'dotenv/config';
 
-const adminFile = "playwright/.auth/admin.json";
+const adminFile = "playwright/.auth/apilogin.json";
 const BASE_URL = "https://bookcart.azurewebsites.net";
 
 setstorage("Generate admin storage state", async () => {
