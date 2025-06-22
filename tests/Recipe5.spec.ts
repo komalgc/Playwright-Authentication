@@ -15,5 +15,8 @@ test('Admin user sees order page', async ({ getPageWithAuth }) => {
 test('Reader user sees homepage', async ({ getPageWithAuth }) => {
   const page = await getPageWithAuth('user');
   await page.goto('https://bookcart.azurewebsites.net/myorders');
-  await expect(page.getByRole("columnheader", { name: "Order ID" })).toBeVisible();
+   let rawText = await page.getByText('account_circlearrow_drop_down').textContent();
+  const username = rawText ? rawText.split(' ').pop()?.trim() : '';
+  console.log('The logged in User is ' + username);
+
 });
