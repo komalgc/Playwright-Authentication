@@ -10,6 +10,6 @@ test('SSO -Google login', async ({ page }) => {
 
   await page.getByLabel('Enter your password').fill(process.env.GOOGLE_PWD ?? "")
   await page.getByRole('button', { name: 'Next' }).click();
-    await page.getByRole('button', { name: 'Accept all cookies' }).click();
+  await page.getByRole('button', { name: 'Accept all cookies' }).click();
 
 })
