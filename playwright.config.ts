@@ -14,8 +14,8 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
 
   use: {
-    //baseURL: 'https://bookcart.azurewebsites.net/',
-    //storageState: 'playwright/.auth.json',
+    baseURL: 'https://bookcart.azurewebsites.net/',
+    storageState: 'playwright/.auth.json',
     trace: 'on-first-retry',
   },
   testDir: './tests',
