@@ -41,8 +41,6 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
      }
 
      const page = await browser.newPage({ storageState: undefined });
-    
-    
      account = await acquireAccount(id);
      
      await page.goto("https://bookcart.azurewebsites.net/");
@@ -53,7 +51,6 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
        .locator("mat-card-actions")
        .getByRole("button", { name: "Login" }).click();
 
-    
      await page.waitForURL("https://bookcart.azurewebsites.net/");
    
      await page.context().storageState({ path: `playwright/.auth${id}.json` });

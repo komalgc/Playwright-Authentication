@@ -13,11 +13,12 @@ test('logintest', async({page}) =>{
 
 })
 
-test.use({ storageState: 'playwright/.auth.json' });
-test ('Homepage test', async({page}) =>{
+//test.use({ storageState: 'playwright/.auth.json' });
+test.only ('Homepage test', async({page}) =>{
 
     await page.goto('https://bookcart.azurewebsites.net/');
-    await expect(page.getByText('Login')).toBeHidden();
+    await expect(page.getByText('account_circlearrow_drop_down')).toBeVisible();
+      
 
 })
 
