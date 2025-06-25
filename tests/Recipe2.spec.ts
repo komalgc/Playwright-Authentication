@@ -3,6 +3,9 @@ import { expect } from '@playwright/test'
 
 // 👩‍💼👩‍💻 💻🔐🔐 Authenticate for multiple accounts once via the UI and 
 // reuse the login storage state
+//When to use:
+//Your tests modify shared server-side state. For example, one test checks the rendering of the settings page, while the other test is changing the setting.
+
 
 
 let bookscount;

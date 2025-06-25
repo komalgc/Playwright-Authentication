@@ -2,6 +2,9 @@ import {test, expect} from '@playwright/test';
 import 'dotenv/config';
 
 // 👩‍💼💻🔐 Authenticate once via the UI and reuse the login storage state
+//When to use:
+//When all your tests running at the same time with the same account, without affecting each other.
+
 test('logintest', async({page}) =>{
 
     //Navigate to the login page    
