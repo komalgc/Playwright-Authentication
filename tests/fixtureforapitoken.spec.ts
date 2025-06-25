@@ -2,6 +2,38 @@ import { test as setstorage, expect, request, chromium } from "@playwright/test"
 import fs from "fs";
 import 'dotenv/config';
 
+/**
+ *  * ┌────────────────────────────────────────────────────────────┐
+ * │          Script: setstorage() - Generate Auth Token         │
+ * └────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *   Step 1: Use `request.newContext()` to hit login API
+ *                   │
+ *                   ▼
+ *        POST /api/login with ADMIN credentials
+ *                   │
+ *                   ▼
+ *     ✅ Receive Token from Response ➝ `authToken`
+ *                   │
+ *                   ▼
+ *   Step 2: Launch Headless Browser via Chromium
+ *                   │
+ *                   ▼
+ *     Navigate to Base URL (`bookcart.azurewebsites.net`)
+ *                   │
+ *                   ▼
+ *      Inject Token into `localStorage` via `page.evaluate()`
+ *                   │
+ *                   ▼
+ *              Reload the page to apply login state
+ *                   │
+ *                   ▼
+ *   Step 3: Save session to file ➝ `apilogin.json`
+ * 
+ * **/
+ 
+
 const adminFile = "playwright/.auth/apilogin.json";
 const BASE_URL = "https://bookcart.azurewebsites.net";
 

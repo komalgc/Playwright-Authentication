@@ -5,6 +5,28 @@ import { test, expect } from "@playwright/test";
 //Your web application supports authenticating via API that is easier/faster 
 // than interacting with the app UI.
 
+/**
+ * 🔐 Authenticate via API and Reuse Storage State in UI Tests
+ *
+
+ *
+ * ┌────────────────────────────────────────────────────────────┐
+ * │         Test Block: Uses storageState from saved file       │
+ * └────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *    Playwright auto-loads `apilogin.json` into browser context
+ *                   │
+ *                   ▼
+ *    No need to perform UI login again — already authenticated
+ *                   │
+ *                   ▼
+ *   Test navigates directly to `/myorders` and validates content
+ *
+ *  Fast, clean, and ideal for stable backend-auth flows!
+ */
+
+
 
 test.use({ storageState: "playwright/.auth/apilogin.json" });
 test("Admin sees orders page", async ({ page }) => {
