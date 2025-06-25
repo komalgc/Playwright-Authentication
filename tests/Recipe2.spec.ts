@@ -6,6 +6,44 @@ import { expect } from '@playwright/test'
 //When to use:
 //Your tests modify shared server-side state. For example, one test checks the rendering of the settings page, while the other test is changing the setting.
 
+/**
+ * 🔐 Playwright Authentication Flow (Parallel User Sessions)
+ *
+ * ┌─────────────────────────────────────────────────────────────┐
+ * │                    Test Worker Starts                       │
+ * └─────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *       Get Unique Worker ID ➝ parallelIndex
+ *                   │
+ *                   ▼
+ *       Match User from .env File Based on ID
+ *       ┌────────────────────────────────────────────┐
+ *       │ if id === 0 → username0 / password0        │
+ *       │ if id === 1 → username1 / password1        │
+ *       └────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *     Check if storage file exists: `.auth{id}.json`
+ *                   │
+ *         ┌─────────┴───────────┐
+ *         │                     │
+ *   ✔ Exists               ❌ Not Found
+ *         │                     │
+ *         ▼                     ▼
+ *   Use storage           Launch browser + login via UI
+ *                         Save storage state to `.auth{id}.json`
+ *                                 │
+ *                                 ▼
+ *                   Provide page context with storage
+ *                                 │
+ *                                 ▼
+ *                     Test executes with pre-authenticated user
+ *                                 │
+ *                                 ▼
+ *             Each test uses its own session, runs in parallel
+ */
+
 
 
 let bookscount;

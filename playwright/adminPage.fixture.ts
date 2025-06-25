@@ -1,8 +1,6 @@
 // playwright/fixtures/browserWithToken.fixture.ts
 import { test as base, Page, chromium } from '@playwright/test';
 import { test as tokenTest } from './authToken.fixture'; // import token fixture
-import fs from 'fs';
-
 import 'dotenv/config';
 
 const BASE_URL = 'https://bookcart.azurewebsites.net';
@@ -13,6 +11,7 @@ type PageFixture = {
 };
 
 export const test = tokenTest.extend<PageFixture>({
+  // Use the authToken fixture to create a new fixture for adminPage
   adminPage: async ({ authToken }, use) => {
     const BASE_URL = 'https://bookcart.azurewebsites.net';
     const adminFile = 'playwright/.auth/admin2.json';
@@ -23,6 +22,7 @@ export const test = tokenTest.extend<PageFixture>({
 
     await page.goto(BASE_URL);
 
+    // Set the authToken in localStorage
     await page.evaluate((tk) => {
       localStorage.setItem('authToken', tk);
     }, authToken);
@@ -31,6 +31,8 @@ export const test = tokenTest.extend<PageFixture>({
     await context.storageState({ path: adminFile });
 
     console.log('✅ Storage state saved to:', adminFile);
+
+    // Use the page with the authToken set
 
     await use(page);
     await browser.close();

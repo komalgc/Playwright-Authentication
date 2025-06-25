@@ -5,6 +5,46 @@ import 'dotenv/config';
 //When to use:
 //When all your tests running at the same time with the same account, without affecting each other.
 
+/**
+ * 🔐 Authenticate Once via UI ➝ Reuse Storage State Across Tests
+ *
+ * ┌────────────────────────────────────────────────────┐
+ * │                First Test: logintest               │
+ * └────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *        Go to Login Page (UI-Based Authentication)
+ *                   │
+ *                   ▼
+ *     Fill Username & Password from .env (.username0)
+ *                   │
+ *                   ▼
+ *              Submit Login Form
+ *                   │
+ *                   ▼
+ *        ✅ Logged In → Landing on Homepage
+ *                   │
+ *                   ▼
+ *     Save Auth State ➝ `playwright/.auth.json`
+ *     (includes cookies + localStorage)
+ *
+ * ┌────────────────────────────────────────────────────┐
+ * │         Second Test: Reuse Saved Login             │
+ * └────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *       Load storageState: `.auth.json` into context
+ *                   │
+ *                   ▼
+ *     Launch Authenticated Session → Go to Homepage
+ *                   │
+ *                   ▼
+ *     ✅ Validate Logged-in UI (e.g. Username shown)
+ * 
+ * No need to log in again — Stable & Fast!
+ */
+
+
 test('logintest', async({page}) =>{
 
     //Navigate to the login page    
