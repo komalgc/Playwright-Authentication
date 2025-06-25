@@ -31,6 +31,7 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
   workerStorageState: [
     async ({ browser }, use) => {
       // Use parallelIndex as a unique identifier for each worker.
+      //parallelIndex is an internal number that Playwright gives to each test worker
       const id = test.info().parallelIndex;
       const fileName = `playwright/.auth${id}.json`;
 
