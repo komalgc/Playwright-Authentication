@@ -7,7 +7,19 @@ import { test } from '../playwright/adminPage.fixture';
 //When to use:
 //Custom fixture gets lengthy and complicated 
 
+/**
 
+ * ┌────────────────────────────────────────────────────────────┐
+ * │   Test File: Uses `getPageWithAuth('admin' | 'user')`      │
+ * └────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *   Injects pre-authenticated page into test
+ *   ✅ Skips login → Directly tests application features
+ *                   │
+ *                   ▼
+ *   Enables clean test isolation & supports multi-user testing
+ */
 
 
 test('Generate admin storage', async ({ adminPage }) => {

@@ -7,8 +7,7 @@ import { expect } from '@playwright/test'
 //Your tests modify shared server-side state. For example, one test checks the rendering of the settings page, while the other test is changing the setting.
 
 /**
- * 🔐 Playwright Authentication Flow (Parallel User Sessions)
- *
+
  * ┌─────────────────────────────────────────────────────────────┐
  * │                    Test Worker Starts                       │
  * └─────────────────────────────────────────────────────────────┘

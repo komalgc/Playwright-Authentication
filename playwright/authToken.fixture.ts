@@ -3,7 +3,19 @@ import { test as base, request, expect } from '@playwright/test';
 import 'dotenv/config';
 
 const BASE_URL = 'https://bookcart.azurewebsites.net';
-
+/** 
+ * ┌────────────────────────────────────────────────────────────┐
+ * │   authToken.fixture.ts (Base Fixture)                      │
+ * └────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *   Uses `request.newContext()` to send login API call
+ *                   │
+ *                   ▼
+ *   Receives and returns `authToken` based on user role
+ *     e.g., admin ➝ token123, user ➝ token456
+ *
+**/
 export const test = base.extend<{ authToken: string; }>({
   authToken: async ({ }, use) => {
     const apiContext = await request.newContext();

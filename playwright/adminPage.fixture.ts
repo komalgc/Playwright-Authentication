@@ -3,6 +3,27 @@ import { test as base, Page, chromium } from '@playwright/test';
 import { test as tokenTest } from './authToken.fixture'; // import token fixture
 import 'dotenv/config';
 
+/**
+ * ┌────────────────────────────────────────────────────────────┐
+ * │   authPage.fixture.ts (Extends token fixture)              │
+ * └────────────────────────────────────────────────────────────┘
+ *                   │
+ *                   ▼
+ *   Launches browser, creates new context  
+ *                   │
+ *                   ▼
+ *   Navigates to app URL and sets `authToken` in localStorage
+ *                   │
+ *                   ▼
+ *   Reloads page to simulate logged-in state
+ *                   │
+ *                   ▼
+ *   Saves storage state to file ➝ `.auth/admin.json` 
+ *   Returns authenticated `page` for use in tests
+ *
+
+ **/
+
 const BASE_URL = 'https://bookcart.azurewebsites.net';
 const adminFile = 'playwright/.auth/admin2.json';
 

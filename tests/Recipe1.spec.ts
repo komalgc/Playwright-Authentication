@@ -6,8 +6,7 @@ import 'dotenv/config';
 //When all your tests running at the same time with the same account, without affecting each other.
 
 /**
- * 🔐 Authenticate Once via UI ➝ Reuse Storage State Across Tests
- *
+ 
  * ┌────────────────────────────────────────────────────┐
  * │                First Test: logintest               │
  * └────────────────────────────────────────────────────┘
