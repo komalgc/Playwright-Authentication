@@ -3,6 +3,9 @@ import 'dotenv/config';
 
 // 👩‍💻📱 🔐 Authenticate for multiple accounts via the API and use
 //them in single test
+//When to use:
+//When the user log in via SSO and redirect to the app correctly
+
 
 
 test('SSO -Google login', async ({ page }) => {
