@@ -2,8 +2,8 @@
 import { test} from '../playwright/multAuthPage.fixture';
 import { expect} from '@playwright/test';
 
-// 👩‍💼👩‍💻 📟🔐🔐 Authenticate for multiple accounts once via the API and 
-// reuse the login storage state
+// 👩‍💼👩‍💻 📟🔐🔐 Authenticate for multiple accounts via the API and use
+// them in single test
 
 
 test.only('Admin and User should access their respective pages', async ({ getPageWithAuth }) => {

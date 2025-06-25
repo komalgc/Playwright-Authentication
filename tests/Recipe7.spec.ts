@@ -1,6 +1,10 @@
 import { test } from '@playwright/test'
 import 'dotenv/config';
 
+// 👩‍💻📱 🔐 Authenticate for multiple accounts via the API and use
+//them in single test
+
+
 test('SSO -Google login', async ({ page }) => {
   await page.goto('https://stackoverflow.com/users/login')
 
