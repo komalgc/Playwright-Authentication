@@ -4,8 +4,12 @@ import { expect} from '@playwright/test';
 
 // 👩‍💼👩‍💻 📟🔐🔐 Authenticate for multiple accounts once via the API and 
 // reuse the login storage state
+//When to use
+//You have more than one role in your end to end tests, but you can reuse accounts across all tests.
+
 
 test('Admin user sees order page', async ({ getPageWithAuth }) => {
+  //
   const page = await getPageWithAuth('admin');
   await page.goto('https://bookcart.azurewebsites.net/myorders');
   await expect(page.getByRole("columnheader", { name: "Order ID" })).toBeVisible();

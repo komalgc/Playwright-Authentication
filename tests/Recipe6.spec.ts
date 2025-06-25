@@ -4,6 +4,9 @@ import { expect} from '@playwright/test';
 
 // 👩‍💼👩‍💻 📟🔐🔐 Authenticate for multiple accounts via the API and use
 // them in single test
+//When to use
+//You need to test how multiple authenticated roles interact together, in a single test.
+
 
 
 test.only('Admin and User should access their respective pages', async ({ getPageWithAuth }) => {
