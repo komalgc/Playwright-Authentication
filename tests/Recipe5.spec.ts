@@ -42,8 +42,6 @@ test('Admin user sees order page', async ({ getPageWithAuth }) => {
   let rawText = await page.getByText('account_circlearrow_drop_down').textContent();
   const username = rawText ? rawText.split(' ').pop()?.trim() : '';
   console.log('The logged in User is ' + username);
-
-
   
 });
 

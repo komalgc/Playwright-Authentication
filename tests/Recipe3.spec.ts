@@ -26,9 +26,9 @@ import { test, expect } from "@playwright/test";
 
 test.use({ storageState: "playwright/.auth/apilogin.json" });
 test("Admin sees orders page", async ({ page }) => {
-  await page.goto("https://bookcart.azurewebsites.net/myorders");
+  await page.goto("https://rahulshettyacademy.com/client/#/dashboard/myorders");
   await expect(page).toHaveURL(/myorders$/);
-  await expect(page.getByRole("columnheader", { name: "Order ID" })).toBeVisible();
+  await expect(page.getByText('Your Orders')).toBeVisible();
 
 });
  

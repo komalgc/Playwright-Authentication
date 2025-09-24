@@ -20,4 +20,5 @@ test('SSO -Google login', async ({ page }) => {
   await page.getByRole('button', { name: 'Accept all cookies' }).click();
   await page.waitForURL('https://stackoverflow.com/');
   await expect(page.getByText('Welcome to Stack Overflow, buyerdev99!')).toBeVisible();
+  
 })

@@ -1,37 +1,27 @@
 {
   "cookies": [
     {
-      "name": "ARRAffinity",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
+      "name": "chat_session_id",
+      "value": "6f19389c-7b66-4872-8dd8-7d3ef8af2275",
+      "domain": "localhost",
       "path": "/",
       "expires": -1,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
-    },
-    {
-      "name": "ARRAffinitySameSite",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
     }
   ],
   "origins": [
     {
-      "origin": "https://bookcart.azurewebsites.net",
+      "origin": "http://localhost:8888",
       "localStorage": [
         {
-          "name": "userId",
-          "value": "54076"
+          "name": "chat_history",
+          "value": "[{\"id\":\"612c8243-09ec-4973-bcdc-2fbcaad8cefc\",\"content\":\"Welcome to crAPI! How can I assist you today?\",\"sender\":\"BOT\",\"type\":\"string\",\"timestamp\":\"Tue, 23 Sep 2025 00:17:34 GMT\",\"tags\":[]},{\"id\":\"dc6adfcc-6ab8-456c-961c-9862aace23e9\",\"content\":\"Chatbot is not initialized. Please choose an option:\",\"sender\":\"BOT\",\"type\":\"string\",\"timestamp\":\"Tue, 23 Sep 2025 00:17:35 GMT\",\"tags\":[\"rcb-markdown-renderer-plugin:parsed\"]},{\"id\":\"347a6290-3b13-4dd9-a750-c6c03dc1c905\",\"content\":\"What would you like to do?\",\"sender\":\"BOT\",\"type\":\"string\",\"timestamp\":\"Tue, 23 Sep 2025 00:17:35 GMT\",\"tags\":[]},{\"id\":\"9cb791d9-1bc3-4ed1-84e6-0abe6fccf432\",\"content\":\"<div class=\\\"rcb-options-container \\\"><div class=\\\"rcb-options\\\" style=\\\"cursor:pointer;background-color:#fff\\\">Initialize</div><div class=\\\"rcb-options\\\" style=\\\"cursor:pointer;background-color:#fff\\\">Clear</div><div class=\\\"rcb-options\\\" style=\\\"cursor:pointer;background-color:#fff\\\">Help</div></div>\",\"type\":\"object\",\"sender\":\"BOT\",\"timestamp\":\"Tue, 23 Sep 2025 00:17:35 GMT\",\"tags\":[]}]"
         },
         {
-          "name": "authToken",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoia29tYWxnYyIsInN1YiI6IlVzZXIiLCJqdGkiOiJjODAyM2JhZS01MDllLTQ4MDQtYmMyMC05NzBmMjg0MzNiZTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwidXNlcklkIjoiOTg4OCIsImV4cCI6MTc1MDk2MTIxOSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNjQvIn0.BE5ajSNkebP-wo3BW4XEHWledV9hMBou8olmv0CICik"
+          "name": "persist:reducers",
+          "value": "{\"userReducer\":\"{\\\"fetchingData\\\":false,\\\"isLoggedIn\\\":true,\\\"accessToken\\\":\\\"eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJidXllcmRldjg4QGdtYWlsLmNvbSIsImlhdCI6MTc1ODU4NjY1NiwiZXhwIjoxNzU5MTkxNDU2LCJyb2xlIjoidXNlciJ9.XdjnxgX36nqyN7HTmonaR7eC3l25k_ctcKcwEJkJRGjgzCLesYJlDGtPtj0nUeWOorUtiqRZVXbo_rlYB-yiT2hmCs7S8RNOqIoJGluXB-Jzg8FWUCNswIbZNXZjdCUOtEs3oDyStnHyrjHfJw5KNYIcaBRJwgZ9wu_R7YX0OQJYOpcaTZ-3O3LrF9IAhWAMnyjBtNqFhX6ShR0kZlGGTdbmifKkkfdXo2lmM5N-3DlhjdDKMa65VphK7C0yr7jxqeFsUHV1UoxTC7TY9nv90kXzW6bQwXn3Wrk5OWewB7PigUC0nFAnW2vRA3peBKdMth_K7vhmsF8Kq7gWcofPFg\\\",\\\"id\\\":8,\\\"name\\\":\\\"buyerdev\\\",\\\"email\\\":\\\"buyerdev88@gmail.com\\\",\\\"number\\\":\\\"1234568778\\\",\\\"role\\\":\\\"ROLE_USER\\\",\\\"available_credit\\\":0,\\\"picture_url\\\":\\\"\\\",\\\"video_url\\\":\\\"\\\",\\\"video_id\\\":\\\"\\\",\\\"video_name\\\":\\\"\\\"}\",\"profileReducer\":\"{\\\"videoId\\\":\\\"\\\",\\\"videoName\\\":\\\"\\\",\\\"profilePicData\\\":\\\"\\\"}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
         }
       ]
     }
