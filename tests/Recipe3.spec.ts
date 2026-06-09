@@ -25,10 +25,10 @@ import { test, expect } from "@playwright/test";
 
 
 test.use({ storageState: "playwright/.auth/apilogin.json" });
-test("customer sees myaccount page", async ({ page }) => {
-  await page.goto("https://practicesoftwaretesting.com/account");
-  await expect(page).toHaveURL(/account$/);
-  await expect(page.getByRole("columnheader", { name: "Order ID" })).toBeVisible();
+test("Admin sees orders page", async ({ page }) => {
+  await page.goto("https://rahulshettyacademy.com/client/#/dashboard/myorders");
+  await expect(page).toHaveURL(/myorders$/);
+  await expect(page.getByText('Your Orders')).toBeVisible();
 
 });
  

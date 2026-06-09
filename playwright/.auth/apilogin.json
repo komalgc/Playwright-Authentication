@@ -1,21 +1,31 @@
 {
   "cookies": [
     {
-      "name": "ARRAffinity",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6Ik4xSHZyL0t4cmFwalIwQWxPYkpDRHc9PSIsInZhbHVlIjoiNEc5YzF5d21STFpDdExFY0F0K050MklHdFhUMHh0dXZ2TTVLVkErcmppQ2tyVEl0d2diOFY4cE4rdXV6MGRma1JFeUloa3hFUXFNMVI0M3ZsZ0lLS1Y5aUhaNVlVMUJPU0p3dHdpbnhxU09NVy9mUHRSNUpHSVQ0L0lTZzJlRTIiLCJtYWMiOiI5YjU0YzYzNzU1OGQ4YjZiOWI1NzQxMzUyY2M3MjI2YWNjNWRhZDFjMTQwNWUwMjU0YzI1MzJkMGIyN2Y5MTg0IiwidGFnIjoiIn0%3D",
+      "domain": "rahulshettyacademy.com",
       "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
+      "expires": 1758687570.9961,
+      "httpOnly": false,
+      "secure": false,
       "sameSite": "Lax"
     },
     {
-      "name": "ARRAffinitySameSite",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
+      "name": "rahulshettyacademy_session",
+      "value": "eyJpdiI6InpoR2ErOXg3ZlBwWjV1aUkycitSc2c9PSIsInZhbHVlIjoicE1QRzcxeUZnU0hBbVVCdWEvTkdpYUtwUko5b3RUQUFqbEY1QVpFWDEyZ0dqSW9aRHVmMmc4Zmt2TE4zV2I3UVFIcHRPOXAzOUF3WDVwQUhHZnJIREFsWTBiaCtLc1I5SE5FKzYreW04eUZmSVdvUSs5c2hvYUNqazV4YWFsVG0iLCJtYWMiOiIxZmEyNDQxMzg1YzgzMjgxZmY0NzE5ZDQ3ZTlmY2M4Yzg5ZThhYzk3MGFiNjU1NTBkMzU4YTVkZjNjNTYwNTIwIiwidGFnIjoiIn0%3D",
+      "domain": "rahulshettyacademy.com",
       "path": "/",
-      "expires": -1,
+      "expires": 1758687570.996173,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "IDE",
+      "value": "AHWqTUk78r4HedR_yTAVjLrfK4O_bg84FwlPkTCByKCQ01TxThE2m1Hxz5-W1awy8bw",
+      "domain": ".doubleclick.net",
+      "path": "/",
+      "expires": 1793240371.159567,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
@@ -23,15 +33,29 @@
   ],
   "origins": [
     {
-      "origin": "https://bookcart.azurewebsites.net",
+      "origin": "https://rahulshettyacademy.com",
       "localStorage": [
         {
+<<<<<<< HEAD
           "name": "userId",
           "value": "39811"
         },
         {
           "name": "authToken",
           "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW51c2VyayIsInN1YiI6IlVzZXIiLCJqdGkiOiI5MjA4ZjMyMi05OWNmLTRlOTAtOGI3My1mNTIxZGJmZTIxZjkiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwidXNlcklkIjoiMTIyNzMiLCJleHAiOjE3NTg2Njc4MzQsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzY0LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzY0LyJ9.rKFZeh9RDaM_W9wvyokoTEb0dk1hw4BTW8vTciaTSi4"
+=======
+          "name": "token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ2MTQyYjgxYTIwNjk1MzA2OThlYmUiLCJ1c2VyRW1haWwiOiJidXllcmRldjg4QGdtYWlsLmNvbSIsInVzZXJNb2JpbGUiOjkwOTA5MDkyMjMsInVzZXJSb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NTg2ODAzNTUsImV4cCI6MTc5MDIzNzk1NX0.ydyle4GbRGMk4IKKlnGEBBNZu_bJjnjKc76D5YLknNY"
+        }
+      ]
+    },
+    {
+      "origin": "https://googleads.g.doubleclick.net",
+      "localStorage": [
+        {
+          "name": "token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODQ2MTQyYjgxYTIwNjk1MzA2OThlYmUiLCJ1c2VyRW1haWwiOiJidXllcmRldjg4QGdtYWlsLmNvbSIsInVzZXJNb2JpbGUiOjkwOTA5MDkyMjMsInVzZXJSb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE3NTg2ODAzNTUsImV4cCI6MTc5MDIzNzk1NX0.ydyle4GbRGMk4IKKlnGEBBNZu_bJjnjKc76D5YLknNY"
+>>>>>>> 7e116b084c6ac1ac6f67732025f3c864f4a79720
         }
       ]
     }

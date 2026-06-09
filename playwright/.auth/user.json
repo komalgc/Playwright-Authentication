@@ -1,27 +1,19 @@
 {
-  "cookies": [
-    {
-      "name": "ARRAffinity",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "ARRAffinitySameSite",
-      "value": "b3eca745e2d5a78c3c6cfbb50dddb41f820b581941b1806806f01ddb82cb47a6",
-      "domain": ".bookcart.azurewebsites.net",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    }
-  ],
+  "cookies": [],
   "origins": [
+    {
+      "origin": "http://localhost:8888",
+      "localStorage": [
+        {
+          "name": "chat_history",
+          "value": "[{\"id\":\"e6972a2c-3eb9-493a-b0e2-3374861a1697\",\"content\":\"Welcome to crAPI! How can I assist you today?\",\"sender\":\"BOT\",\"type\":\"string\",\"timestamp\":\"Tue, 23 Sep 2025 00:48:46 GMT\",\"tags\":[]}]"
+        },
+        {
+          "name": "persist:reducers",
+          "value": "{\"userReducer\":\"{\\\"fetchingData\\\":false,\\\"isLoggedIn\\\":true,\\\"accessToken\\\":\\\"eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJidXllcmRldjg4QGdtYWlsLmNvbSIsImlhdCI6MTc1ODU4ODUyNiwiZXhwIjoxNzU5MTkzMzI2LCJyb2xlIjoidXNlciJ9.P7Ws9yxV3W0zwfi_uptsp6AtNetMMF6vFuGFVkQKghpyY9QxaFo7PDe74GrVmpUhp7MvPiVG6oKJdJIDlB7ExzZrtaUcj_CexKups6UKMLjJx6iQ1OkcOtFBgRCDDhXPILbwWHHuV6tgRz5X1fX3v6OboCnTc2WsFQx-5lUrOt42qMyI1vPUvAZ52Q1p7H4RZlDn5kUkroqz65sVNiTq2mJlYNrT2jC1bP3Z_OLwiPrYXHSRRHbBQfCxQP3v6IxNp3fp-xaRNe81ciBkBm8VrVhI3G93zMq7ayqrnms1-tF7crqfRUyAIAC_bceAfP-Q2Jlv6xGM2Fp2Y7WbwBWioQ\\\",\\\"id\\\":8,\\\"name\\\":\\\"buyerdev\\\",\\\"email\\\":\\\"buyerdev88@gmail.com\\\",\\\"number\\\":\\\"1234568778\\\",\\\"role\\\":\\\"ROLE_USER\\\",\\\"available_credit\\\":0,\\\"picture_url\\\":\\\"\\\",\\\"video_url\\\":\\\"\\\",\\\"video_id\\\":\\\"\\\",\\\"video_name\\\":\\\"\\\"}\",\"profileReducer\":\"{\\\"videoId\\\":\\\"\\\",\\\"videoName\\\":\\\"\\\",\\\"profilePicData\\\":\\\"\\\"}\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+        }
+      ]
+    },
     {
       "origin": "https://bookcart.azurewebsites.net",
       "localStorage": [
